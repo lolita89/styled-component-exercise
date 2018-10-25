@@ -4,7 +4,12 @@ import styled from 'styled-components';
 import Statement from './Statement';
 
 const ButtonClick = styled.button`
-    background-color: papayawhip;
+    width: 5em;
+    height: 5em;
+    margin: 2em;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: ${props => props.plus ? "green" : "red"};
     color: black;
 `;
 
@@ -16,6 +21,7 @@ class Button extends React.Component {
         };
         this.increment = this.increment.bind(this);
         this.decrement = this.decrement.bind(this);
+        this.reset = this.reset.bind(this);
     }
 
     increment() {
@@ -31,14 +37,23 @@ class Button extends React.Component {
         })
     }
 
+    reset() {
+        this.setState({
+            count: 0
+        })
+    }
+
     render() {
         return (
             <div>
-            <ButtonClick onClick={this.increment}>
+            <ButtonClick plus onClick={this.increment}>
                 +
             </ButtonClick>
             <ButtonClick onClick={this.decrement}>
                 -
+            </ButtonClick>
+            <ButtonClick onClick={this.reset}>
+                Reset
             </ButtonClick>
             <Statement data={this.state.count}/>
             </div>

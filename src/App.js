@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import Title from './components/Title'
 import Button from './components/Button.js'
-import Statement from './components/Statement'
 import styled from 'styled-components';
 
 
