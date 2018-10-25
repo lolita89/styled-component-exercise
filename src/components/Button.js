@@ -1,6 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Statement from './Statement';
 
 const ButtonClick = styled.button`
     background-color: papayawhip;
@@ -36,7 +37,10 @@ class Button extends React.Component {
             <ButtonClick onClick={this.increment}>
                 +
             </ButtonClick>
-            <h1>{this.state.count}</h1>
+            <ButtonClick onClick={this.decrement}>
+                -
+            </ButtonClick>
+            <Statement data={this.state.count}/>
             </div>
             
         );

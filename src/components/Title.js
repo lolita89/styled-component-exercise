@@ -12,7 +12,7 @@ class Title extends Component {
   render() {
     return (
       <TitleName>
-          test! it is from title component
+          Counter
       </TitleName>
     );
   }
