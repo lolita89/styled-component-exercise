@@ -11,7 +11,19 @@ const ButtonClick = styled.button`
     font-weight: bold;
     background-color: ${props => props.plus ? "green" : "red"};
     color: black;
+
+    :hover {
+        color: white;
+    }
 `;
+
+//override styles
+const ResetButton = styled(ButtonClick)`
+    background-color: yellow;
+    :hover {
+        color: red;
+    }
+`
 
 class Button extends React.Component {
     constructor(props) {
@@ -49,12 +61,15 @@ class Button extends React.Component {
             <ButtonClick plus onClick={this.increment}>
                 +
             </ButtonClick>
+
             <ButtonClick onClick={this.decrement}>
                 -
             </ButtonClick>
-            <ButtonClick onClick={this.reset}>
+
+            <ResetButton onClick={this.reset}>
                 Reset
-            </ButtonClick>
+            </ResetButton>
+
             <Statement data={this.state.count}/>
             </div>
             
